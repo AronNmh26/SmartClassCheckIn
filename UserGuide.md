@@ -1,40 +1,38 @@
-﻿# User Guide
+# User Guide
 
-This guide explains how to install and use the Smart Class Check-in & Learning Reflection App.
+This guide explains how to use the Smart Class Check-in App.
 
-## How to install the app
-1. Install Flutter from the official guide: https://docs.flutter.dev/get-started/install
-2. From the project root, fetch dependencies:
+## Start the app
+1. Install Flutter: https://docs.flutter.dev/get-started/install
+2. From the project root, run:
 
 ```bash
 flutter pub get
-```
-
-3. Run the app on a device or emulator:
-
-```bash
 flutter run
 ```
 
-## How to add tasks
-This MVP does not include a task feature. Instead, it captures **class check-ins** and **class completions**.
+## Home screen
+The home screen includes:
+- A welcome header and quick overview
+- Today stats for check-ins and completions
+- Quick Actions to start Check-in or Finish Class
+- A short How It Works checklist
 
-To add a check-in entry:
-1. Open the app and tap **Check-in**.
+## Check-in flow
+1. Tap **Check-in**.
 2. Tap **Capture GPS Location**.
-3. Tap **Scan Class QR Code** and scan the code.
-4. Fill in the pre-class questions and mood.
-5. Tap **Submit Check-in**.
+3. Tap **Scan Class QR Code** and scan the class QR.
+4. Enter the previous class topic and expected topic.
+5. Select a mood.
+6. Tap **Submit Check-in**.
 
-To add a completion entry:
-1. Open the app and tap **Finish Class**.
+## Finish class flow
+1. Tap **Finish Class**.
 2. Tap **Capture GPS Location**.
-3. Tap **Scan Class QR Code** and scan the code.
-4. Fill in what you learned and optional feedback.
+3. Tap **Scan Class QR Code** and scan the class QR.
+4. Enter what you learned and optional feedback.
 5. Tap **Submit Completion**.
 
-## How to view tasks
-This MVP does not include a task list or history screen. Saved check-ins and completions are stored locally in the background.
-
-## How to mark tasks as completed
-This MVP does not include tasks. To finish a class session, use **Finish Class** and submit the post-class reflection.
+## Troubleshooting
+- If location is permanently denied on iOS, go to **Settings > Privacy & Security > Location Services > Smart Class Checkin** and allow **While Using the App**.
+- The web app needs HTTPS and browser permission to access location.

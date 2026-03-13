@@ -1,16 +1,17 @@
-﻿# Smart Class Check-in & Learning Reflection App
+# Smart Class Check-in App
 
-A simple Flutter MVP that lets university students check in to class, verify presence using GPS and QR scanning, and submit short learning reflections.
+A Flutter app for university class attendance and reflection. Students check in with GPS and QR, share a quick mood and topic expectation, and complete a short reflection after class.
 
 ## Features
-- Home screen with Check-in and Finish Class flows
+- Modern home dashboard with hero header, stats, and quick actions
+- Step-by-step check-in and finish flows with progress feedback
 - GPS location capture
-- QR code scanning
-- Pre-class mood + topic prompts
-- Post-class reflection + feedback
+- QR code scanning with manual entry fallback
+- Pre-class mood and topic prompts
+- Post-class reflection and feedback
 - Local data storage using SharedPreferences
 
-## Installation
+## Setup
 1. Install Flutter: https://docs.flutter.dev/get-started/install
 2. From the project root, fetch dependencies:
 
@@ -18,12 +19,30 @@ A simple Flutter MVP that lets university students check in to class, verify pre
 flutter pub get
 ```
 
-## How to Run the App
-1. Ensure you have a device or emulator running.
-2. Run the app:
+## Run
+- Mobile or desktop:
 
 ```bash
 flutter run
+```
+
+- Web (Chrome):
+
+```bash
+flutter run -d chrome
+```
+
+## Build Web
+```bash
+flutter build web
+```
+
+## Deploy to Firebase Hosting
+1. Initialize Hosting (public directory: `build/web`, SPA: Yes).
+2. Deploy:
+
+```bash
+firebase deploy --only hosting
 ```
 
 ## Platform Permissions
@@ -46,8 +65,11 @@ Add these keys to `ios/Runner/Info.plist`:
 <string>Camera access is required to scan class QR codes.</string>
 <key>NSLocationWhenInUseUsageDescription</key>
 <string>Location access is required to verify classroom check-in.</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Location access is required to verify classroom check-in.</string>
 ```
 
 ## Notes
-- Data is stored locally for the MVP (no Firebase sync yet).
-- QR code payload is treated as a simple class/session ID string.
+- Data is stored locally for this MVP (no cloud sync).
+- Web location requires HTTPS and browser permission.
+- If iOS permission is permanently denied, enable it in Settings.
